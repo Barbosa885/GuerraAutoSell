@@ -22,7 +22,7 @@ export default function Home() {
 
   return (
     <section>
-    <Nav />
+      <Nav />
       <div className="flex justify-center items-center h-screen bg-gradient-to-b from-zinc-900 to-indigo-900">
         <div className="h-[30%]">
           <div className="">
