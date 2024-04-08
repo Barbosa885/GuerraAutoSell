@@ -2,8 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Logo from "../../public/images/logos/Prancheta.png";
 
-import {Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem, Link, Dropdown, DropdownItem, DropdownMenu, DropdownTrigger, Button} from "@nextui-org/react";
-import { IoChevronDown } from "react-icons/io5";
+import {Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem, Link} from "@nextui-org/react";
 
 export default function Nav() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false); 
