@@ -14,7 +14,7 @@ export default function Nav() {
   ]
 
   return (
-    <Navbar className="h-16 bg-transparent" position="sticky" onMenuOpenChange={setIsMenuOpen} shouldHideOnScroll >
+    <Navbar className="h-16 bg-transparent" position="sticky" onMenuOpenChange={setIsMenuOpen} >
       <NavbarContent>
         <NavbarBrand>
           <Image src={Logo} alt="Logo" width={48}/>
