@@ -10,11 +10,10 @@ export default function Nav() {
   const menuItems = [
     "Fale conosco",
     "Quem somos?",
-    "Veículos",
   ]
 
   return (
-    <Navbar className="h-16 bg-transparent" position="sticky" onMenuOpenChange={setIsMenuOpen} >
+    <Navbar className="h-16 bg-transparent fixed" position="sticky" onMenuOpenChange={setIsMenuOpen} >
       <NavbarContent>
         <NavbarBrand>
           <Image src={Logo} alt="Logo" width={48}/>
