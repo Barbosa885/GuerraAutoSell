@@ -8,15 +8,28 @@ export default function Nav() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false); 
 
   const menuItems = [
-    "Fale conosco",
-    "Quem somos?",
+    { label: "Fale conosco", href: "contato"},
+    { label: "Quem somos?", href: "quem-somos"},
   ]
+
+  const handleSmoothScroll = ({event, targetId}: any) => {
+    event.preventDefault();
+    const targetElement = document.getElementById(targetId);
+    if (targetElement) {
+      window.scrollTo({
+        top: targetElement.offsetTop - 100, // Ajuste conforme necessário para a altura da Navbar
+        behavior: 'smooth',
+      });
+    }
+  };
 
   return (
     <Navbar className="h-16 bg-transparent fixed" position="sticky" onMenuOpenChange={setIsMenuOpen} >
       <NavbarContent>
         <NavbarBrand>
-          <Image src={Logo} alt="Logo" width={48}/>
+          <Link href="/" >
+            <Image src={Logo} alt="Logo" width={48}/>
+          </Link>
         </NavbarBrand>
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
@@ -38,16 +51,17 @@ export default function Nav() {
       </NavbarContent>
       <NavbarMenu>
         {menuItems.map((item, index) => (
-          <NavbarMenuItem key={`${item}-${index}`}>
+          <NavbarMenuItem key={`${item.label}-${index}`}>
             <Link
+              onClick={(event) => handleSmoothScroll({ event, targetId: item.href})}
               color={
                 index === 2 ? "primary" : index === menuItems.length - 1 ? "danger" : "foreground"
               }
               className="w-full"
-              href="#"
+              href={item.href}
               size="lg"
             >
-              {item}
+              {item.label}
             </Link>
           </NavbarMenuItem>
         ))}
