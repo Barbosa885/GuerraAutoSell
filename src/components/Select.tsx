@@ -6,7 +6,7 @@ type SelectInputProps = {
   label: string;
   placeholder?: string;
   options: { value: string; label: string }[];
-  value?: string;
+  value?: number;
   onChange?: (e: any) => void;
   disabled?: boolean;
 }

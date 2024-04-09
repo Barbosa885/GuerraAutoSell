@@ -4,10 +4,25 @@ import { BrandCards, Btn, Nav, SelectInput } from "../../components";
 import { api } from "../../services/api";
 import { Toaster, toast } from 'alert';
 
+interface Brand {
+  code: number;
+  name: string;
+}
+
+interface Model {
+  id: string;
+  name: string;
+}
+
+interface Year {
+  id: string;
+  name: string;
+}
+
 export default function Explore() {
-  const [brands, setBrands] = useState([]);
-  const [models, setModels] = useState([]);
-  const [years, setYears] = useState([]);
+  const [brands, setBrands] = useState<Brand[]>([]);
+  const [models, setModels] = useState<Model[]>([]);
+  const [years, setYears] = useState<Year[]>([]);
   const [selectedBrand, setSelectedBrand] = useState(0);
   const [selectedModel, setSelectedModel] = useState(0);
 
