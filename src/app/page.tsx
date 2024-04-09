@@ -5,7 +5,7 @@ import BBLogo from '../../public/images/logos/Frame 16.svg'
 import GGLogo from '../../public/images/logos/Prancheta 2GUERRAGRUPO.png'
 
 // Componentes
-import {Nav, Hero, Input} from '../components'
+import {Nav, Hero, Input, Btn} from '../components'
 
 export default function Home() {
 
@@ -47,6 +47,7 @@ export default function Home() {
           <Input type="Nome" label="Nome"/>  
           <Input type="Email" label="Email" placeholder="exemplo@email.com"/>  
           <Input type="Mensagem" label="Mensagem"/>
+            <Btn text="Enviar" className="w-1/2 text-white font-bold self-end" color="warning"/>
         </div>
       </section>
     </>
