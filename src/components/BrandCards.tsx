@@ -7,8 +7,12 @@ type BrandCardsProps = {
   onBrandSelect: (brandId: number) => void;
 }
 
+interface BrandLogo {
+  [key: string]: string;
+}
+
 export default function BrandCards({items, onBrandSelect}: BrandCardsProps) {
-  const [brandLogos, setBrandLogos] = useState({});
+  const [brandLogos, setBrandLogos] = useState<BrandLogo>({});
 
   useEffect(() => {
    const fetchLogos = async () => {
@@ -26,7 +30,7 @@ export default function BrandCards({items, onBrandSelect}: BrandCardsProps) {
         });
 
         const logos = await Promise.all(logoPromises);
-        const logosMap = logos.reduce((acc, logo) => {
+        const logosMap = logos.reduce((acc: Record<string, string>, logo) => {
           if (logo) {
             acc[logo.brandName] = logo.logoUrl;
           }
