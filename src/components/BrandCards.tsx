@@ -4,7 +4,7 @@ import axios from "axios";
 
 type BrandCardsProps = {
   items: any[];
-  onBrandSelect: (brandName: string) => void;
+  onBrandSelect: (brandId: number) => void;
 }
 
 export default function BrandCards({items, onBrandSelect}: BrandCardsProps) {
