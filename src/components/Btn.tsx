@@ -4,10 +4,11 @@ type BtnProps = {
   text : string
   className? : string
   children? : React.ReactNode
+  onClick? : () => void
 }
 
-export default function Btn({text, className} : BtnProps) {
+export default function Btn({text, className, onClick} : BtnProps) {
   return (
-    <Button className={className}>{text}</Button>
+    <Button onClick={onClick} className={className}>{text}</Button>
   );
 }

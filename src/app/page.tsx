@@ -43,7 +43,7 @@ export default function Home() {
       <section id="contato" className="flex items-center h-screen justify-center">
         <Image src={GGLogo} alt="Logo do grupo guerra" className="text-white hidden md:block" width={300} />
         <div className="w-1/2 space-y-4 flex flex-col items-center justify-center">
-          <h1 className="text-5xl font-semibold">Fale conosco</h1>
+          <h1 className="md:text-5xl sm:text-3xl text-2xl font-semibold">Fale conosco</h1>
           <Input type="Nome" label="Nome"/>  
           <Input type="Email" label="Email" placeholder="exemplo@email.com"/>  
           <Input type="Mensagem" label="Mensagem"/>

@@ -8,16 +8,15 @@ export default function Nav() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false); 
 
   const menuItems = [
-    { label: "Fale conosco", href: "contato"},
-    { label: "Quem somos?", href: "quem-somos"},
+    { label: "Fale conosco", href: "#contato"},
+    { label: "Quem somos?", href: "#quem-somos"},
   ]
 
-  const handleSmoothScroll = ({event, targetId}: any) => {
-    event.preventDefault();
+  const handleSmoothScroll = ({targetId}: any) => {
     const targetElement = document.getElementById(targetId);
     if (targetElement) {
       window.scrollTo({
-        top: targetElement.offsetTop - 100, // Ajuste conforme necessário para a altura da Navbar
+        top: targetElement.offsetTop,
         behavior: 'smooth',
       });
     }
@@ -38,16 +37,13 @@ export default function Nav() {
       </NavbarContent>
 
       <NavbarContent className="hidden sm:flex gap-4" justify="end">
-        <NavbarItem>
-          <Link color="foreground" href="#">
-            Fale conosco
-          </Link>
-        </NavbarItem>
-        <NavbarItem isActive>
-          <Link color="foreground" href="#" aria-current="page">
-            Quem somos?
-          </Link>
-        </NavbarItem>
+        {menuItems.map((item, index) => (
+          <NavbarItem key={`${item.label}-${index}`}>
+            <Link color="foreground" href={item.href} onClick={handleSmoothScroll}>
+              {item.label}
+            </Link>
+          </NavbarItem>
+        ))}
       </NavbarContent>
       <NavbarMenu>
         {menuItems.map((item, index) => (

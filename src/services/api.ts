@@ -1,6 +1,6 @@
 import axios from 'axios'
 
 export const api = axios.create({
-  baseURL: 'https://deividfortuna.github.io/fipe/v2/'
+  baseURL: 'https://fipe.parallelum.com.br/api/v2/'
 })
 
